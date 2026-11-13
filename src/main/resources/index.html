@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Online Food Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2>🍔 Foodie</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </button>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Delicious Food Delivered To Your Door</h1>
+        <p>Fresh, tasty and delicious food at your fingertips.</p>
+        <a href="#menu" class="hero-btn">Order Now</a>
+    </div>
+</section>
+
+<section class="menu" id="menu">
+    <h1>Our Food Menu</h1>
+
+    <input type="text" id="search"
+           placeholder="Search your favourite food...">
+
+    <div class="filters">
+        <button onclick="filterFood('All')">All</button>
+        <button onclick="filterFood('Pizza')">Pizza</button>
+        <button onclick="filterFood('Burger')">Burger</button>
+        <button onclick="filterFood('Biryani')">Biryani</button>
+        <button onclick="filterFood('Drinks')">Drinks</button>
+    </div>
+
+    <div class="food-container" id="foodContainer">
+
+        <div class="food-card" data-category="Pizza">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500"
+                 alt="Pizza">
+            <h3>Cheese Pizza</h3>
+            <p>Delicious cheesy pizza with fresh toppings.</p>
+            <h4>₹199</h4>
+            <button onclick="addToCart('Cheese Pizza', 199)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-category="Burger">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500"
+                 alt="Burger">
+            <h3>Veg Burger</h3>
+            <p>Fresh vegetable burger with special sauce.</p>
+            <h4>₹129</h4>
+            <button onclick="addToCart('Veg Burger', 129)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-category="Biryani">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500"
+                 alt="Biryani">
+            <h3>Chicken Biryani</h3>
+            <p>Spicy and delicious aromatic biryani.</p>
+            <h4>₹249</h4>
+            <button onclick="addToCart('Chicken Biryani', 249)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-category="Pizza">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500"
+                 alt="Margherita Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>Classic pizza with cheese and tomato.</p>
+            <h4>₹179</h4>
+            <button onclick="addToCart('Margherita Pizza', 179)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-category="Burger">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=500"
+                 alt="Chicken Burger">
+            <h3>Chicken Burger</h3>
+            <p>Juicy chicken burger with fresh vegetables.</p>
+            <h4>₹159</h4>
+            <button onclick="addToCart('Chicken Burger', 159)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-category="Drinks">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500"
+                 alt="Fresh Juice">
+            <h3>Fresh Juice</h3>
+            <p>Refreshing fresh fruit juice.</p>
+            <h4>₹79</h4>
+            <button onclick="addToCart('Fresh Juice', 79)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h1>About Foodie</h1>
+    <p>
+        Foodie is an online food ordering website where
+        customers can explore delicious food, add items
+        to their cart and place orders easily.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h1>Contact Us</h1>
+    <p>Email: foodie@gmail.com</p>
+    <p>Phone: 9876543210</p>
+    <p>Location: Bengaluru, India</p>
+</section>
+
+<!-- Shopping Cart -->
+<div class="cart-section" id="cartSection">
+    <div class="cart-box">
+        <button class="close-btn" onclick="closeCart()">✖</button>
+        <h2>🛒 Your Shopping Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <h3>Total: ₹<span id="total">0</span></h3>
+
+        <button class="checkout-btn" onclick="checkout()">
+            Place Order
+        </button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Foodie Online Food Ordering Website</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
